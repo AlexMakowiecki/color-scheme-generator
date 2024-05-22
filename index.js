@@ -37,6 +37,7 @@ schemeDisplayEl.addEventListener("mouseout", (e) => {
 function renderNewScheme() {
   const schemeSelectedType = document.getElementById("scheme-type-input").value.toLowerCase();
   const schemeSelectedColor = document.getElementById("scheme-color-input").value.slice(1);
+  /* Using global variable. schemeDisplayEl === element.getElementById('scheme-display)*/
   schemeDisplayEl.classList.add("obscure")
   fetch(`https://www.thecolorapi.com/scheme?hex=${schemeSelectedColor}&mode=${schemeSelectedType}`)
     .then(res => res.json())
@@ -45,11 +46,11 @@ function renderNewScheme() {
       schemeColors.forEach((color, i) => {
         const schemeColorContainerEl = document.getElementById(`scheme-color-${i + 1}`)
         const schemeColorInfoEl = schemeColorContainer.querySelector('.scheme-color-info')
-        schemeColorContainer.parentElement.ariaLabel = `Copy color with HEX value: ${color}`
-        schemeColorInfo.dataset.hex = color
-        schemeColorContainer.style.backgroundColor = color;
-        schemeColorInfo.textContent = color;
-        schemeDisplay.classList.remove("obscure")
+        schemeColorContainerEl.parentElement.ariaLabel = `Copy color with HEX value: ${color}`
+        schemeColorInfoEl.dataset.hex = color
+        schemeColorContainerEl.style.backgroundColor = color;
+        schemeColorInfoEl.textContent = color;
+        schemeDisplayEl.classList.remove("obscure")
       })
     })
 }
