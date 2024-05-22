@@ -18,7 +18,8 @@ This website is a Solo Project of the Scrimba Frontend Course, Module 8, where t
   * z-index of buttons content set to "-1" to make the button outline when focused more visible.
   * z-index of buttons set to "1" to make its content visible. (content general z-index = -1 + 1 for his container = 0).
   * z-index of buttons set to "2" then focused/hovered to prevent the outline from hiding behind the other buttons.
-  * pointer-events:none set to the buttons content, to help when using event listeners. 
+  * pointer-events:none set to the buttons content, to help when using event listeners.
+  * grid used for the layout of everything, to make the color containers adapt to the window height.
 ## Preview
 ![color-scheme-generator](https://github.com/AlexMakowiecki/color-scheme-generator/assets/122258496/fde9c0c8-8ba2-4d66-846c-46dafc8da42b)
 
