@@ -45,7 +45,7 @@ function renderNewScheme() {
       const schemeColors = data.colors.map(colorData => colorData.hex.value)
       schemeColors.forEach((color, i) => {
         const schemeColorContainerEl = document.getElementById(`scheme-color-${i + 1}`)
-        const schemeColorInfoEl = schemeColorContainer.querySelector('.scheme-color-info')
+        const schemeColorInfoEl = schemeColorContainerEl.querySelector('.scheme-color-info')
         schemeColorContainerEl.parentElement.ariaLabel = `Copy color with HEX value: ${color}`
         schemeColorInfoEl.dataset.hex = color
         schemeColorContainerEl.style.backgroundColor = color;
